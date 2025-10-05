@@ -1,0 +1,57 @@
+/* Simple responsive styling for the Expense Tracker */
+:root{
+  --bg:#f6f8fa;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#0ea5a4;
+  --danger:#ef4444;
+  --radius:10px;
+  --max-width:980px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;
+  background:linear-gradient(180deg,#eef2f7 0%,var(--bg) 100%);
+  color:#0f172a;
+  -webkit-font-smoothing:antialiased;
+}
+.container{
+  max-width:var(--max-width);
+  margin:32px auto;
+  padding:20px;
+}
+h1{margin:0 0 16px}
+.card{background:var(--card);border-radius:var(--radius);padding:16px;margin-bottom:16px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+.form-card input[type="text"], .form-card input[type="number"], .form-card input[type="date"], .form-card select, .form-card input[type="search"]{
+  width:100%;padding:8px 10px;border:1px solid #e6e9ef;border-radius:8px;margin-top:6px;background:transparent
+}
+.row{margin-bottom:12px}
+.two-up{display:flex;gap:12px}
+.two-up > div{flex:1}
+.actions{display:flex;gap:8px}
+button{background:var(--accent);color:white;border:none;padding:10px 14px;border-radius:8px;cursor:pointer}
+button#clear-all{background:#f3f4f6;color:#111}
+button:disabled{opacity:0.6;cursor:not-allowed}
+.stats{display:flex;gap:12px;justify-content:space-between}
+.stats > div{flex:1;text-align:center}
+.stats small{color:var(--muted)}
+.stats div > div{font-weight:700;font-size:1.1rem;margin-top:6px}
+.list-header{display:flex;gap:12px;align-items:center;justify-content:space-between}
+.list-header input{width:240px}
+#transactions{list-style:none;padding:0;margin:12px 0 0;max-height:380px;overflow:auto}
+.transaction{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:8px;border:1px solid #f1f5f9;margin-bottom:8px}
+.tx-left{display:flex;gap:12px;align-items:center}
+.tx-title{font-weight:600}
+.tx-meta{font-size:0.85rem;color:var(--muted)}
+.tx-amount{font-weight:700}
+.tx-amount.in{color:green}
+.tx-amount.out{color:var(--danger)}
+.tx-actions button{background:transparent;border:none;color:var(--muted);cursor:pointer}
+.attribution{text-align:center;color:var(--muted);font-size:0.85rem;margin-top:8px}
+@media (max-width:640px){
+  .two-up{flex-direction:column}
+  .list-header input{width:140px}
+  .stats{flex-direction:column;gap:8px}
+}

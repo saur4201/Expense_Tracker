@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EXPENSE TRACKER</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Expense Tracker</h1>
+
+    <section class="card form-card">
+      <form id="expense-form">
+        <div class="row">
+          <label for="title">Title</label>
+          <input id="title" name="title" type="text" placeholder="e.g., Groceries" required>
+        </div>
+        <div class="row two-up">
+          <div>
+            <label for="amount">Amount</label>
+            <input id="amount" name="amount" type="number" step="0.01" placeholder="0.00" required>
+          </div>
+          <div>
+            <label for="type">Type</label>
+            <select id="type" name="type">
+              <option value="expense">Expense</option>
+              <option value="income">Income</option>
+            </select>
+          </div>
+        </div>
+        <div class="row two-up">
+          <div>
+            <label for="category">Category</label>
+            <input id="category" name="category" type="text" placeholder="e.g., Food">
+          </div>
+          <div>
+            <label for="date">Date</label>
+            <input id="date" name="date" type="date" required>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="submit" id="add-btn">Add</button>
+          <button type="button" id="clear-all">Clear All</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card stats-card">
+      <div class="stats">
+        <div>
+          <small>Total Income</small>
+          <div id="total-income">₹0.00</div>
+        </div>
+        <div>
+          <small>Total Expense</small>
+          <div id="total-expense">₹0.00</div>
+        </div>
+        <div>
+          <small>Balance</small>
+          <div id="balance">₹0.00</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card list-card">
+      <div class="list-header">
+        <h2>Transactions</h2>
+        <input id="filter" placeholder="Filter by category or title">
+      </div>
+      <ul id="transactions" aria-live="polite"></ul>
+    </section>
+
+    <footer class="attribution">Built with HTML, CSS & JavaScript • Saves to localStorage</footer>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
